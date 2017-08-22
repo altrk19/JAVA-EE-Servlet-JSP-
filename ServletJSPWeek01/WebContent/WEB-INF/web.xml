@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ServletJSPWeek01</display-name>
+ 
+<!-- 
+<servlet>
+ 	<servlet-name>MyFirstServlet</servlet-name>
+ 	<servlet-class>_01.hello.servlet.FirstServlet</servlet-class> 
+ </servlet>
+ 1. yöntem ile servlet oluşturma
+ --> 
+ 
+ 
+ 
+ 
+ <!-- Aşağıda daha önceden oluşturulmuş olan servlet map ediliyor. -->
+ <servlet>
+ 	<servlet-name>MyFirstServlet</servlet-name>
+ 	<servlet-class>_01.hello.servlet.AnnotationServlet</servlet-class> <!-- CTRL ile basınca class'a gidebilmen lazım -->
+ </servlet>
+ 
+ <servlet-mapping>
+ <servlet-name>MyFirstServlet</servlet-name>
+ <url-pattern>/</url-pattern>
+ </servlet-mapping>
+</web-app>
+
+
+<!-- DİKKAT!
+1)servlet-name'ler eşleşsin.
+2)servlet class ta class ismini doğru yazmalıyız.CTRL ile classa gidilmeli
+3)url pattern'de / ile başla
+
+ -->
