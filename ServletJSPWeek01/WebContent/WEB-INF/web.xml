@@ -3,32 +3,52 @@
   <display-name>ServletJSPWeek01</display-name>
  
 <!-- 
+ 1. yöntem ile servlet oluşturma
 <servlet>
  	<servlet-name>MyFirstServlet</servlet-name>
  	<servlet-class>_01.hello.servlet.FirstServlet</servlet-class> 
  </servlet>
- 1. yöntem ile servlet oluşturma
+
  --> 
  
  
  
  
- <!-- Aşağıda daha önceden oluşturulmuş olan servlet map ediliyor. -->
- <servlet>
- 	<servlet-name>MyFirstServlet</servlet-name>
- 	<servlet-class>_01.hello.servlet.AnnotationServlet</servlet-class> <!-- CTRL ile basınca class'a gidebilmen lazım -->
+
+ <!--  1. yöntem ile servlet oluşturma -->
+<servlet>
+ 	<servlet-name>FirstServletName</servlet-name>
+ 	<servlet-class>_01.hello.servlet.FirstServlet</servlet-class> 
  </servlet>
  
  <servlet-mapping>
- <servlet-name>MyFirstServlet</servlet-name>
+ <servlet-name>FirstServletName</servlet-name>
  <url-pattern>/</url-pattern>
  </servlet-mapping>
 </web-app>
 
 
-<!-- DİKKAT!
+<!-- DİKKAT! web.xml için:
 1)servlet-name'ler eşleşsin.
 2)servlet class ta class ismini doğru yazmalıyız.CTRL ile classa gidilmeli
 3)url pattern'de / ile başla
 
  -->
+ 
+ 
+ 
+ <!-- Servletler projeye iki şekilde eklenir.
+ 1)extends
+ 2)Annotation
+ Biz bu uygulamada sadece extends işlemini gerçekleştirdik. 
+  -->
+ 
+ <!-- 
+ Konfügürasyon işlemi 2 şekilde gerçekleştirilir.
+ 1)web.xml
+ 2)Annotation
+ 
+ Şuan uygulamada 2 türlü konfügürasyon işlemi de çalışmaktadır. 
+ / requesti geldiğinde web.xml içerisinde mapping gerçekleştirilir.
+ /annotation.servlet isteği geldigiğinde ise @WebServlet annotationu gerçekleştirilir.
+  -->

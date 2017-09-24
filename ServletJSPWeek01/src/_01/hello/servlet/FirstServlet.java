@@ -19,6 +19,7 @@ public class FirstServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter pw = resp.getWriter();
 		pw.print("Hello Servlet");
+		//super.doGet(req,resp);
 		
 	}
 
