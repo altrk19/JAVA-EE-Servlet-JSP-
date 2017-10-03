@@ -6,12 +6,14 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/contextServlet")
-public class ContextServlet extends HttpServlet{
+//@WebServlet("/contextServlet")        // bu servlete ait config objesinde parametre yok. oluþturmak için  
+@WebServlet(urlPatterns="/contextServlet",initParams=@WebInitParam(name="var",value="value"))
+public class ContextServlet extends HttpServlet{     //@WebServlet(urlPatterns="/configAnnotation",initParams=@WebInitParam(name="role",value="admin")) yapýsý kullanýlmalýdýr.
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -19,7 +21,7 @@ public class ContextServlet extends HttpServlet{
 		//ServletContext context2=getServletConfig().getServletContext();      // ikiside aynýdýr	
 		
 		ServletConfig config = getServletConfig();
-		String name=config.getInitParameter("username");
+		String name=config.getInitParameter("var");
 	
 		
 		
