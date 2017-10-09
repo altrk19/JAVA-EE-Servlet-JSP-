@@ -4,6 +4,7 @@
 package _02.request.methods;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.Locale;
 
 import javax.servlet.ServletContext;
@@ -28,6 +29,7 @@ public class RequestMethodsServlet extends HttpServlet{
 		String hostName=req.getHeader("host");                   //host'un header bilgileri
 		String httpMethod=req.getMethod();
 		
+		
 		System.out.println(locale);
 		System.out.println(serverPort);
 		System.out.println(localPort);
@@ -37,5 +39,14 @@ public class RequestMethodsServlet extends HttpServlet{
 		System.out.println(context);
 		System.out.println(hostName);
 		System.out.println(httpMethod);
+		
+		System.out.println("Header Names #####");
+		Enumeration<String> headerNames=req.getHeaderNames();
+		while(headerNames.hasMoreElements()) {
+			String hname=headerNames.nextElement();
+			String hvalue=req.getHeader(hname);
+			System.out.println(hname+" "+hvalue);
+		}
+		
 	}
 }

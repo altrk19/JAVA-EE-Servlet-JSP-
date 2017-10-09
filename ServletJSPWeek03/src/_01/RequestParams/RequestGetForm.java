@@ -1,3 +1,7 @@
+//listbox'ýn html karþýlýðý <select>
+//radiobutton'Un html karþýlýgý <input type="radio" />
+//checkbox ayný <input type="checkbox" />
+
 package _01.RequestParams;
 
 import java.io.IOException;
@@ -21,6 +25,8 @@ public class RequestGetForm extends HttpServlet{
 		
 		System.out.println("RequestGetForm#doGet");
 		
+		/*
+		//1. yöntem
 		String firstName=req.getParameter("firstName");
 		String lastname=req.getParameter("lastName");
 		String gender=req.getParameter("gender");
@@ -32,15 +38,17 @@ public class RequestGetForm extends HttpServlet{
 		pw.println(lastname);
 		pw.println(gender);
 		pw.println(medeniDurum);
-		pw.println(Arrays.asList(langs));
+		pw.println(Arrays.asList(langs));*/
 		
-		//html sayfasýnda girilen içerikleri console'da yazdýrdýk
-		Map<String,String[]> parameterMap =req.getParameterMap();
-		for(Map.Entry<String, String[]> entry : parameterMap.entrySet()) {
-			System.out.println(entry.getKey()+" "+Arrays.asList(entry.getValue()));
+		
+		//2. yöntem. döngü ile tüm bilgileri yazdýrdýk
+		PrintWriter pw = resp.getWriter();
+		Map<String, String[]> parameterMap=req.getParameterMap();            //getParameterMap() metodu request parametrelerinin name ve value bilgilerini map yapýsý içerisinde return eder.
+		for(Map.Entry<String,String[]> entry : parameterMap.entrySet()) {
+			pw.println(entry.getKey()+""+Arrays.asList(entry.getValue())+"<br>");
 		}
-			
 		
+			
 		
 	}
 

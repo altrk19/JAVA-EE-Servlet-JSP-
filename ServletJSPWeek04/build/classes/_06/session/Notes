@@ -1,0 +1,30 @@
+Session
+
+Bir Java Web uygulamasi normal sartlarda bir cok istemci/client ile iletisim halinde olacaktir. Surekli bir istek/cevap(request/response) durumu olacaktir. Bu Web uygulamamiz, her kullanicinin transaction(islem) gecmisini bilmek isteyecektir.
+
+Hatirlayacagimiz gibi HTTP stateless/durumsuz bir protokoldur. Yani browser/istemci server/sunucu ile baglanti kurar, istekte bulunur(request) cevabi alir(response) ve browser ile server arasinda baglanti kapanir. Yani her baglanti bir request/response icindir.
+
+Baglanti kalici (persistent) degildir. Servlet Container, istegi gonderen client/istemciyi tanimaz daha once ayni client istekte bulunmusmu diye ilgilenmez.
+
+Session, ayni client/istemcinin birden fazla istek/request icin devamliligi saglar. Bunun icin HttpSession objemizi kullanacagiz. Bu session objemiz yardimiyla uygulamamizi, stateful Web Applicaton haline getirebiliriz.
+
+Peki Servlet Container’in , client/istemciyi tanimasini nasil saglayabiliriz ?
+
+Session ID
+
+Client/istemci bir istekte(request) bulundugunda , Container unique/essiz bir Session ID olusturur ve bu Session ID bilgisini cevaba(response) ekler. Daha sonrasinda istemci sonrasindaki isteklerde(request) bu Session ID bilgisini de gonderir.
+
+Peki istemci/sunucu arasinda session id bilgisi nasil tasinmaktadir ?
+Cookie uzerinden bu bilgi tasinir !
+
+HttpSession objesini olusturma
+Unique Session ID olusturma
+Cookie objesi olusturma
+Session ID ile Cookie objesini iliskilendirme
+Cookie’yi , cevaba(response) ekleme gorevlerinden Servlet Container sorumludur.
+Kisacasi Servlet Container, tum session ve cookie gorevlerini yapmaktadir !
+
+Session ID olusturma mantigi su sekildedir;
+
+eger istek/request Session Id , Cookie bilgisine sahipse ilgili eslesen session’i bul ve session id ile iliskilendir.
+eger istek/request Session Id  ,Cookie bilgisine sahip degilse yeni bir session olustur.Tum bunlar arka planda calisir.

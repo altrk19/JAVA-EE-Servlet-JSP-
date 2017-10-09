@@ -1,0 +1,9 @@
+Session ID‘nin ,Cookie uzerinden tasindigindan bahsetmistim. Peki , tarayicimizda Cookie ozelligini kapatirsak ?
+
+URL rewriting & URL Encoding
+
+Teknik olarak URL rewriting ile URL encoding farkli anlamlara gelmektedir. URL rewriting , tarayicinin Cookie ozelligi disable/kapali oldugu durumda session bilgisinin tutmak icin kullanilan tekniktir.
+
+URL encoding ise bazi ozel karakterleri ilgili karakter setine uygun donusturme islemidir.
+
+Servlet konusunda URL encoding ile URL rewriting kavramlari arasinda karisikliga neden olan durum ; URL rewriting icin encodeURL metodunun kullanilmasidir. Bu metot aslinda URL rewriting islemini yapmaktadir.
