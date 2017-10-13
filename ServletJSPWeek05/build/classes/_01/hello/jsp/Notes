@@ -1,0 +1,34 @@
+View layer son kullanýcýya datayý gösterir ya da son kullanýcýdan data al(form)
+bunun dýsýndaki iþlemleri view layerda yapma
+en çok yapýlan yanlýs hareket ver itabanýna baglanma
+
+jsp dosyalarý servlet container tarafýndan servlet sýnýflarýna (.java) dosyalarýna translate edilir.
+sonrasýnda compile edilir.(.class dosyalrý olusur)
+
+
+JSP Scriptlet
+Scriptlet yardýmý ile java kodumuzu html kodlarý arasýna yazabiliriz.
+<% java code %>
+
+JSP Directives
+@page directive ile JSP dosyamýza import iþlemi uyguluyoruz.
+Birden fazla import yapmak içni araya virgül koyuyoruz.
+<%@ page imoport="java.util.List,java.util.ArrayList"%>
+
+JSP Expression
+Expression yardýmý ile out.println() yapmak yerine direkt olarak tarayýcýya istedigimiz degeri yazdýrabiliriz.
+<%= expression %>
+
+JSP Declaration
+metot veya instance tanýmlayabiliriz.
+<%! %>
+
+JSP Action
+<jsp:action_name attribute="value"/>
+
+JSP Comment
+<%-- jsp comment --%> 
+jsp comment tarayýcýda görünmez
+
+HTNL comment tarayýcýda görünür
+<!-- html comment-->

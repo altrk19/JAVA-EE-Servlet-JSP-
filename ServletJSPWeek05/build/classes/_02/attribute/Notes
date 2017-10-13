@@ -1,0 +1,29 @@
+JSP Attribute
+
+Servlet ile calisirken attribute kavramini inceledik. Hatirlayacagimiz gibi context, session ve request scopelari ile attribute kullanabilecegimizi gormustuk. JSP de ise bu scope’lara ek olarak Page scope yer almaktadir.
+Asagidaki kodlarda JSP implicit objelerini gorebiliriz;
+application , request, session ve pageContext
+
+application –> ServletContext objesidir.
+request –> HttpServletRequest objesidir.
+session –> HttpSession objesidir.
+pageContext –> PageContext objesidir.
+Application Scope
+
+Servlet---> getServletContext().setAttribute("foo",barObj);
+JSP ------> application.setAttribute("foo",barObj);
+
+Request Scope
+
+Servlet---> request.setAttribute("foo",barObj);
+JSP ------> request.setAttribute("foo",barObj);
+
+Session Scope
+
+Servlet---> request.getSession().setAttribute("foo",barObj);
+JSP ------> session.setAttribute("foo",barObj);
+
+Page Scope
+
+JSP ------> pageContext.setAttribute("foo",barObj);
+pageContext objesiile herhangi bir scope’tan attribute’e ulasabiliriz.
