@@ -1,0 +1,9 @@
+Expression Language implicit objects
+Expression Language asagidaki implicit objelere sahiptir. Burada dikkat etmemiz gereken nokta bu Expression Language implicit objeleri JSP implicit objeleri ile ayni degildir !
+Sadece pageContext implicit objesi hem EL hem JSP de aynidir !
+
+param , EL implicit objesini kullanarak , formumuzdaki parametrelere ulasabiliriz.
+paramValues , El implicit objesini kullanarak checkboxtaki birden fazla parametre degerine ulasabiliriz.
+
+******NOT:Bu yaklaþýmý kullanmayýz. Formu jsp'ye submit etmek yerine controller'a submit etmeliyiz.
+

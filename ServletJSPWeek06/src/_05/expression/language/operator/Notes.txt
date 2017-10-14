@@ -1,0 +1,22 @@
+Expression Language kullanirken genel olarak operator ile hesaplama yapmamiz pek onerilen bir durum degildir. 
+Yine de expression language arithmetic , logical ve relational operatorleri destekler.
+Arithmetic Operator
++
+-
+*
+/ veya div
+% veya mod
+Logical Operator
+&& veya and
+|| veya or
+! veya not
+Relational Operator
+== veya equals
+!= veya ne
+< veya lt
+> veya gt
+<= veya le
+>= veya ge
+0 a bolme sonucu , Expression Language “Infinity” sonucunu dondurecektir. 0’a bolme islemini Java 
+kodunda yapsak runtime exception aliriz. % mod operatorunu 0 ile kullanirsak 0’a bolme isleminde oldugu 
+gibi “Infinity” degil exception aliriz !

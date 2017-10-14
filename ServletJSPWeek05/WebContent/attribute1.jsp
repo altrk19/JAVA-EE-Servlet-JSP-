@@ -8,11 +8,13 @@
 </head>
 <body>
 <%
-	out.print("Attribute'ler eklendi. Simdi /attribute2.jsp sayfasina gidin");
+	
 	request.setAttribute("requestAttribue", "requestValue");
 	session.setAttribute("sessionAttribute", "sessionValue");
 	application.setAttribute("applicationAttribute", "applicationValue");
 	pageContext.setAttribute("pageContextAttribute", "pageContextValue");
+	
+	out.print("Attribute'ler eklendi. Simdi /attribute2.jsp sayfasina gidin"); //bu örnekte servlet sınıfı kullanılmadı. attributeler jsp de eklendi.
 	
 	pageContext.setAttribute("key1", "value1",PageContext.SESSION_SCOPE);    //SESSİON'A EKLER
 %>

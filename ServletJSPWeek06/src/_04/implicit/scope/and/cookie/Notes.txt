@@ -1,0 +1,46 @@
+employee ve employee2 isimli Employee turundeki objelerimizi attribute olarak ekleyelim.
+Benzer sekilde str isimli attribute objemizi request, scope ve context scope’larina ekledik.
+Sonrasinda JSP dosyamiza dispatch ettik.
+JSP dosyamizda ilgili scopelardan ayni isimli attribute objelerimize ulasmak icin requestScope , sessionScope , applicationScope implicit objelerini kullanabiliriz.
+	${employee.name } <br>
+	${requestScope.employee.name } <br>
+	${sessionScope.employee.name } <br>
+	${requestScope["test.attribute"].name } <br>
+
+	${str} <br> 
+	${requestScope.str} <br>
+	${sessionScope.str} <br>
+	${applicationScope.str } <br>
+        ${cookie.userName.value }
+Eger ilgili implicit obje page scope’ta yoksa bu durumda sirasiyla request , session , context scope’a bakilacaktir.
+${employee.name }
+JSP dosyamizda , cookie EL implicit objemiz araciligiyla ulasabiliriz. Cookie ismi “userName” , degerine ulasmak icin value property degerini kullanacagiz.
+${cookie.userName.value }
+
+
+
+
+
+header , Expression Language implicit objesini kullanarak header bilgilerine ulasabiliriz.
+	<%= request.getHeader("host") %>
+	${header["host"] }
+	${header.host }
+JSP implicit objesi olan request araciligiyla host bilgisine ulastik. Benzer sekilde header Expression Language objesi ile host bilgisine ulasabiliriz.
+	<%=request.getMethod()%> <br>
+	<%--${request.method } 
+	    ${requestScope.method } 
+	 --%>
+request adinda Expression Language’e ait bir implicit object yoktur ! request adinda JSP implicit object vardir.
+JSP implicit object ile Expression Language implicit object’ler pageContext haric ayni degildir.
+requestScope adinda Expression Language’e ait bir implicit object vardir.
+requestScope , request scope attribute’leri tutan Map’tir . requestScope objesi request objesinin kendisi degildir. requestScope request attribute objelerine ulasabiliriz , request properties’lere ulasamayiz.
+pageContext EL implicit objesi araciligiyla request property degerine sonrasinda ise method property degerine ulasabiliriz.
+${pageContext.request.method}
+
+
+
+
+initParam , context init paremetrelerini tutan Map’tir.
+initParam ,implicit objemiz aracigiyla projemizdeki context init parametrelere ulasabiliriz. Unutmayalim initParam , implicit objemiz servlet init parametreleri icin degil context init parametreleri icindir.
+Projemizde email isminde context init parametremiz vardi , JSP dosyamizda bu context init parametremize ulasabiliriz.
+${initParam.email }

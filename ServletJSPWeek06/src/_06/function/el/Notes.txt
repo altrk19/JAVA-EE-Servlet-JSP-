@@ -1,0 +1,11 @@
+Expression Language aracigiliyla Java metotlarimizi kullanabiliriz. Bunun icin oncelikle yeni bir sinif tanimlayalim ve basit bir metot yazalim. 
+Burada onemli nokta metot public ve static olmalidir !
+
+funtion.tld dosyamiz WEB-INF klasoru altinda olmalidir.  uri ve name alanlarina istedigimiz isimleri yazdik. <function-class> etiketi ile ilgili sinifin ismini paket 
+adiyla birlikte yazdik.
+<function-signature> etiketi ile metot tanimimizi yaziyoruz. Sinifimiza tanimladigimiz metodu tld dosyamizda da tanimliyoruz.
+
+Yeni bir taglib tanimi yaptik. prefix alanina istedigimiz bir ismi verdik. uri alanina ise tld dosyamizda verdigimiz myURI ismini yazdik.
+Tanimladigimiz function’i expression language ile kullanmak icin ; tanimladigimiz prefix ve tld dosyasinda  <name> etiketinde verdigimiz isim gereklidir. 
+Tanimladigimiz metot 2 tane parametre aldigi icin burada myFunction(5,10) olarak deger gonderiyoruz.
+JSP dosyamizi calistirdigimizda sonucu 75 olarak tarayicimiza yazdiracaktir.
