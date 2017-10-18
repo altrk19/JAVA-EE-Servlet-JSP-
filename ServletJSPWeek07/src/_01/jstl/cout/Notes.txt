@@ -1,0 +1,53 @@
+WEB-INF -> lib -> jstl-1.2.jar
+
+https://mvnrepository.com/artifact/javax.servlet/jstl/1.2    sitesinden jar dosyamýzý indirdik. 
+
+
+JSTL taglarini kullanabilmemiz icin oncelikle jstl ve standard taglibs jarlarina sahip olmamiz gereklidir. 
+Web projemizde jar dosyalarimiz WEB-INF altinda yer alan lib klasorunde olmalidir. 
+Boylelikle deployment sirasinda otomatik olarak deploy edilir ve problem yasamayiz.
+
+<c:out>
+
+<c:out> etiketi <%= =%> JSP expression gibi calisir. JSP Expression da oldugu gibi sonucu browserde gostermemizi saglar.
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:out> etiketi value attribute’u alir ve bu attribute zorunludur. Ornek kodu inceleyelim ;
+
+	<%="Hello JSP Expression" %>	
+	<br>
+	
+	<!-- c:out JSP Expression gibi calisir, value degerini browserda gosterir. -->
+	
+	<c:out value="Hello JSTL !" />
+        <br>
+JSP Scriptlet kodumuz icerisinde bir attribute ekleyebiliriz ve bu attribute degerini JSP Expression kullanarak gosterebiliriz. Benzer sekilde c:out etiketini kullanarak da bunu yapabiliriz. value attribute icerisinde expression kullanabiliriz.
+
+        <%
+	   request.setAttribute("name","injavawetrust");
+	%>
+	
+	<%= request.getAttribute("name") %>
+	<br>
+	
+	<!-- value attribute alaninda expression language kullanabiliriz ! -->
+	<c:out value="${name}"/>
+	<br>
+	
+c:out etiketi otomatik olarak html taglarindan kacar. escapeXml attribute alani varsayilan olarak true degerine sahiptir.
+
+Ne demek istedigimi daha iyi anlayabilmek icin ornek kodu inceleyelim. Burada tarayiciya    <b> </b> is bold tag yazmak istiyoruz. Bunu JSP Expression ile yazdigimizda <b></b> kodlari html kodu olarak degerlendirilecektir. <c:out> etiketini kullandigimizda ise html kodu olarak degerlendirilmez , boylelikle tarayicida gorebiliriz.
+
+escapeXml varsayilan olarak true oldugu icin eger bu attribute degerini false yaparsak ayni JSP Expression da oldugu gibi calisacaktir ve <b></b> kodu html kodu olarak degerlendirilecektir.
+
+ 
+	<%="<b> </b> is bold tag" %> 	
+	<br> 
+	
+	<c:out value="<b> </b> is bold tag"/>	
+	<br>
+	
+	<!--  escapeXml varsayilan olarak true dur. -->
+	<c:out value="<b> </b> is bold tag" escapeXml="false"/>
+	
+	

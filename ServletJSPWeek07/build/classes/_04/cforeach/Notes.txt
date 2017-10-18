@@ -1,0 +1,17 @@
+<c:forEach>
+
+<c:forEach> etiketini for dongusu gibi kullanabiliriz.
+<c:forEach> etiketi begin , end attribute degerlerine sahiptir.
+
+    <c:forEach var="x" begin="1" end="5">
+       <c:out value="${x}"/> 
+    </c:forEach>
+step attribute degerini kullanarak increment/arttirim degerini ayarlayabiliriz.
+
+    <c:forEach var="x" begin="5" end="15" step="5">
+       <c:out value="${x}"/>
+    </c:forEach>
+<c:forEach> etiketini kullanarak dizi, list , mapler uzerinde iteration yapabiliriz.
+items attribute alaninda array, list, map attribute objelerimizi kullanabiliriz.
+
+

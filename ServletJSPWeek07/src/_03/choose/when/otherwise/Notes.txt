@@ -1,0 +1,3 @@
+<c:choose> etiketi icerisinde <c:when> ve <c:otherwise> etiketi kullanilabilir. <c:choose> etiketi if-else yapisi ya da switch yapisi gibi dusunebilir.
+
+</c:otherwise> zorunlu degildir sart saglanmadigi durumda </c:otherwise> calisacaktir.

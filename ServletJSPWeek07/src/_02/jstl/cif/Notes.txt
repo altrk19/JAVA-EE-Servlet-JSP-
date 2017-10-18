@@ -1,0 +1,12 @@
+<c:if>
+
+if statement’ini JSTL etiketi olarak kullanabiliriz. c:if etiketi test attribute’u almaktadir.
+
+== or eq	Test for equality
+!= or ne	Test for inequality
+< or lt	Test for less than > or gt	Test for greater than
+<= or le	Test for less than or equal >= or gt	Test for greater than or equal
+&& or and	Test for logical AND
+|| or or	Test for logical OR
+! or not	Unary Boolean complement
+empty	Test for empty variable values

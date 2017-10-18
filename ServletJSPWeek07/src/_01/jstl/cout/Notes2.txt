@@ -1,0 +1,13 @@
+<c:set>
+
+<jsp:setProperty> , Standard Action ile yaptigimiz isi <c:set> JSTL etiketi ile de yapabiliriz.
+Bununla birlikte <c:set> in farkli ozellikleri de bulunmaktadir.
+
+<c:set> JSTL etiketinde var ve target isminde 2 tane farkli attribute vardir.
+
+var versiyonu attribute degiskenlerini eklemek/olusturmak icin kullanilir.
+target versiyonu bean property(alanlari) veya Map degerlerini eklemek/olusturmak/atamak icin kullanilir.
+
+<c:remove>
+
+c:remove etiketi eklenen attribute’leri silmek icin kullanilabilir. Eger scope belirtilmezse ilgili isimde attribute objesi tum scope’lardan kaldirilir

@@ -1,0 +1,4 @@
+<c:forTokens>
+
+<c:forTokens> etiketini kullanarak ilgili delimiter’a gore tokenlara ayirma islemi yapabiliriz.
+delims attribute zorunludur ve birden fazla delimiter kullanabiliriz.
