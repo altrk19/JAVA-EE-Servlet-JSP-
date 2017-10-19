@@ -1,0 +1,9 @@
+url'de kullanýlan soru iþareti(?) sayfalar arasý parametre geçiþi için kullanýlýr.
+
+ <td><a href="employeeController?employeeId1=${employee.id}"      
+											class="btn btn-danger" type="button">Delete</a></td>
+											
+
+/employeeController?employeeId1=${employee.id}  
+http://localhost:8080/ServletJSPWeek07DatabaseApp/employeeController?employeeId1=16  linki sayesinde get metodu ile bilgileri server'a göndermek için ?alan1=deger1
+																						yapýsý kullanýlýr.
