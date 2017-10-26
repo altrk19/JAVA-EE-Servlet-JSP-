@@ -1,0 +1,33 @@
+Mantýðý: face'de sayfada dururken sayfanýn bir kýsmý sürekli güncellenmekte.Sayfanýn tamamýný render etmek yerine sayfanýn
+belirli bir yerini refresh eder.
+
+Arka planda servera istek gider,data gelir sadece ilgili alan degisir.
+
+Diðer bir örnek; e ticaret sitesinde ödeme yaparken kredi kartý bilgisi girildikten sonra,kampanya veya bonusu var mý bilgileri
+ekranda görülür. Bunun sonucunu görmek için sayfa refresh edilmez.ilgili alan refres edilir.
+
+
+JSON Example
+{"employees":[
+    { "firstName":"John", "lastName":"Doe" },
+    { "firstName":"Anna", "lastName":"Smith" },
+    { "firstName":"Peter", "lastName":"Jones" }
+]}
+
+
+XML Example
+<employees>
+    <employee>
+        <firstName>John</firstName> <lastName>Doe</lastName>
+    </employee>
+    <employee>
+        <firstName>Anna</firstName> <lastName>Smith</lastName>
+    </employee>
+    <employee>
+        <firstName>Peter</firstName> <lastName>Jones</lastName>
+    </employee>
+</employees>
+
+
+Java objelerinin JSON'a dönüþtürülmesi için çeþitli kütüphaneler vardýr. Yada tam tersi için. Bunun için Gson kullanabiliriz.
+

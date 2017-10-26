@@ -1,0 +1,46 @@
+JSON xml'in rakibi gibi düþünülebilir.
+JSON'un temel mantýðý þudur : Client servlerlar arasýnda verinin deðiþmesidir.(exchange)
+
+Bneim bir tane web service'im var. Client'a datayý xml yada JSON formatýnda gönderiyorum.
+
+xml'in de amaçlarýndan bir tanesi budur.
+
+Datayý serverlar(servisler) arasýnda xml formatýnda taþýrýz.
+
+Mesela SOAP webservisler xml tabanldýr. Data xml formatýnda taþýnýr. Ama RESTFUL web servislerinde data hem xml hem de JSON formatýnda taþýnabalir.
+
+
+
+function sendAjaxQueryJSON() {                                 //fonksiyonumuz var
+	
+	var postData = {                                              //data oluþturuyoruz
+		name : $('#firstName').val(),             
+		surname : $('#lastName').val(),                             //var yapýsý oluþturuluyor.
+		gender : $('#gender').val()
+	};
+
+	$.ajax({
+		url : 'person.servlet',
+		method : 'POST',
+		data : JSON.stringify(postData),
+		contentType : "application/json; charset=utf-8",
+		dataType : "json",
+		success : function(responseText) {
+			$('#ajaxGetUserServletResponse').text(responseText.message);
+		}
+
+	});
+}
+
+
+
+
+<tr>
+        		<td> 
+        			<input type="button" value="Onayla" onclick="sendAjaxQueryJSON()"/>           //butona basýldýgýnda ilgili fonksiyon çalýþacaktýr.
+        		</td>
+        </tr>
+        
+        
+ 
+     <form id="form1" action="person.servlet" method="post">                                     //veriyi person.servlete gönderiyor. post metodu ile
